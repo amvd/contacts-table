@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './App.css'
 import { processData } from './data/response'
 import { Contact } from './data/contact'
-import Row from './row'
+import Table from './Table'
 import { isEmpty } from 'lodash-es'
 
 const CORS_API_URL = 'https://cors-anywhere.herokuapp.com/'
@@ -60,7 +60,7 @@ function App() {
 
   return (
     <div className="App">
-      {contactData.map((contact: Contact) => <Row key={contact.id} contact={contact} />)}
+      <Table data={contactData} />
     </div>
   );
 }

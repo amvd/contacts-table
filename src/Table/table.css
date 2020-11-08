@@ -1,0 +1,52 @@
+.table {
+  flex-basis: 100%;
+  min-width: 750px;
+  max-width: 1000px;
+  border-radius: 50px;
+}
+
+.header {
+  border: 1px solid #dee1ec;
+  color: #4d526b;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.9em;
+  font-weight: bolder;
+}
+
+.column.text {
+  text-align: left;
+}
+
+.column {
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.checkbox {
+  flex-basis: 5%;
+}
+
+.name {
+  flex-basis: 22%;
+}
+
+.deals-value {
+  flex-basis: 15%;
+}
+
+.location {
+  flex-basis: 17%;
+}
+
+.deals-count {
+  flex-basis: 10%;
+}
+
+.column.text.deals-count {
+  text-align: center;
+}
+
+/* .tags {
+  flex-basis: 
+} */

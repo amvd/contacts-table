@@ -1,0 +1,29 @@
+.contact-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  border-top: 0;
+  border-bottom: 1px;
+  border-right: 1px;
+  border-left: 1px;
+  border-style: solid;
+  border-color: #dee1ec;
+}
+
+.selected {
+  background-color: #f9faff;
+}
+
+.contact-row .column {
+  padding: 10px 5px;
+}
+
+.contact-row .name {
+  font-weight: 440;
+  color: #2950e0;
+}
+
+.column.deals-count {
+  text-align: center;
+}

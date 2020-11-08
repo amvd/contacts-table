@@ -1,4 +1,4 @@
-import { clone, cloneDeep, compact, each, map } from 'lodash-es'
+import { compact } from 'lodash-es'
 
 import { Contact, ContactTag } from './contact'
 import { Deal } from './deal'
@@ -46,10 +46,16 @@ export function mapIdsToData<T extends DataEntry>(ids: string[], data: T[]): T[]
   return compact(ids.map(id => data.find(datum => datum.id === id) || null))
 }
 
-export function mapIpsToLocation(ipIds: string[], geoIpData: GeoIps[], geoAddressData: GeoAddress[]): GeoAddress[] {
-  const ipRecords = compact(ipIds.map(id => geoIpData.find(datum => datum.id === id)))
+export function mapIpsToLocation(
+  ipIds: string[],
+  geoIpData: GeoIps[],
+  geoAddressData: GeoAddress[]
+): GeoAddress[] {
+  const ipRecords = ipIds.map(id => geoIpData.find(datum => datum.id === id))
 
-  const locationRecords = ipRecords.map(({ geoAddress }) => geoAddressData.find(address => address.id === geoAddress))
+  const locationRecords = compact(ipRecords)
+    .map(({ geoAddress }) =>
+      geoAddressData.find(address => address.id === geoAddress))
 
   return compact(locationRecords)
 }

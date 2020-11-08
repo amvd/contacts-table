@@ -1,7 +1,7 @@
 import { compact, isEmpty } from 'lodash-es'
 import US_STATES from './us_states'
 
-const NO_LOCATION = 'Unknown'
+const NO_LOCATION = '—'
 const ADDRESS_DIVIDER = ' / '
 
 export type GeoAddress = {

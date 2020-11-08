@@ -1,24 +1,25 @@
 import { Contact, formatName, formatTags } from '../contact'
 
 describe('Contact data', function() {
-  const contact: Contact = {
-    id: '46',
-    deals: [],
-    firstName: 'Joe',
-    lastName: 'Biden',
-    location: [{
-      id: '1600',
-      city: 'Washington',
-      state: 'District of Columbia',
-      country2: 'US'
-    }],
-    tags: [{
-      id: '1',
-      contact: '46',
-      tag: 'president'
-    }]
-  }
   describe('#formatName', function() {
+    const contact: Contact = {
+      id: '46',
+      deals: [],
+      firstName: 'Joe',
+      lastName: 'Biden',
+      location: [{
+        id: '1600',
+        city: 'Washington',
+        state: 'District of Columbia',
+        country2: 'US'
+      }],
+      contactTags: [{
+        id: '1',
+        contact: '46',
+        tag: 'president'
+      }]
+    }
+
     it('combines first and last name', function() {
       expect(formatName(contact)).toBe('Joe Biden')
     })
