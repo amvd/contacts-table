@@ -13,7 +13,7 @@ export type Contact = {
   firstName: string
   lastName: string
   location: GeoAddress[]
-  tags: ContactTag[]
+  contactTags: ContactTag[]
 }
 
 export function formatName({ firstName, lastName }: Contact): string {

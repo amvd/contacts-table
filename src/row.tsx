@@ -23,7 +23,7 @@ function Row({ contact }: Props) {
         {formatName(contact)}
       </div>
       <div className="tags">
-        {formatTags(contact.tags)}
+        {formatTags(contact.contactTags)}
       </div>
       <div className="deals">
         {getDealCount(contact.deals)}

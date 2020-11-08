@@ -20,7 +20,7 @@ describe('Contact data', function() {
   }
   describe('#formatName', function() {
     it('combines first and last name', function() {
-      expect(formatName(contact)).toBe('Joe Joel')
+      expect(formatName(contact)).toBe('Joe Biden')
     })
   })
 
