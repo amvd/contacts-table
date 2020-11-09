@@ -29,8 +29,6 @@ const fetchContacts = async () => {
   }
 
   const json = await response.json()
-
-  console.log('response data:', json)
   
   return json
 }
@@ -45,8 +43,6 @@ function App() {
 
       const data: Contact[] = processData(result)
 
-      console.log(data)
-
       setContactData(data)
       setLoaded(true)
     }
@@ -54,9 +50,8 @@ function App() {
     fetchData()
   }, [])
 
-  if (!loaded || isEmpty(contactData)) return <div className="loading">Loading...</div>
-
-  console.log('data:', contactData)
+  if (!loaded || isEmpty(contactData))
+    return <div className="loading">Loading...</div>
 
   return (
     <div className="App">
@@ -65,6 +60,4 @@ function App() {
   );
 }
 
-export default App;
-
-console.log('host:', process.env.REACT_APP_API_HOST)
+export default App

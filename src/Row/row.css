@@ -19,6 +19,11 @@
   padding: 10px 5px;
 }
 
+.contact-row .column.checkbox {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .contact-row .name {
   font-weight: 440;
   color: #2950e0;

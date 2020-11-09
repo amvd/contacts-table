@@ -4,11 +4,11 @@ import { Contact, ContactTag } from './contact'
 import { Deal } from './deal'
 import { GeoAddress, GeoIps } from './location'
 
-interface DataEntry {
+export interface DataEntry {
   id: string
 }
 
-type RawContact = {
+export type RawContact = {
   id: string
   deals: string[]
   firstName: string
@@ -17,7 +17,7 @@ type RawContact = {
   contactTags: string[]
 }
 
-type RawData = {
+export type RawData = {
   contacts: RawContact[]
   contactTags: ContactTag[]
   deals: Deal[]
@@ -46,7 +46,7 @@ export function mapIdsToData<T extends DataEntry>(ids: string[], data: T[]): T[]
   return compact(ids.map(id => data.find(datum => datum.id === id) || null))
 }
 
-export function mapIpsToLocation(
+function mapIpsToLocation(
   ipIds: string[],
   geoIpData: GeoIps[],
   geoAddressData: GeoAddress[]

@@ -12,7 +12,7 @@ import { formatLocation } from '../data/location'
 
 type Props = {
   contact: Contact
-  selected: boolean
+  selected?: boolean
   toggleRow: () => void
 }
 
