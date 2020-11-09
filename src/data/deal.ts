@@ -1,5 +1,6 @@
 import { map, groupBy, isEmpty } from 'lodash-es'
-import currencyTable from './currencies'
+
+const DEFAULT_LANGUAGE = 'en-US'
 
 export type Deal = {
   id: string
@@ -9,12 +10,6 @@ export type Deal = {
 }
 
 export const NO_DEALS = 'N/A'
-
-export function getCurrencySymbol(currencyCode: string): string {
-  const code = currencyCode.toUpperCase()
-
-  return currencyTable[code] || code
-}
 
 export function getDealCount(deals: Deal[]): number {
   return deals.length
@@ -28,9 +23,16 @@ export function getDealValues(deals: Deal[] | null, displayCurrency?: string): s
   return map(
     currencyGroups,
     (deals: Deal[], currencyCode: string) =>
-      `${getCurrencySymbol(currencyCode)}${sumDeals(deals)}`
+      formatCurrency(sumDeals(deals), currencyCode)
     )
     .join(', ')
+}
+
+export function formatCurrency(value: number, currency: string) {
+  return value.toLocaleString(
+    navigator.language || DEFAULT_LANGUAGE,
+    { style: 'currency', maximumFractionDigits: 0, minimumFractionDigits: 0, currency }
+  )
 }
 
 function sumDeals(deals: Deal[]): number {

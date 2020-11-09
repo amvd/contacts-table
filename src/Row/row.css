@@ -1,12 +1,12 @@
 .contact-row {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
-
+  
   border-top: 0;
   border-bottom: 1px;
-  border-right: 1px;
   border-left: 1px;
+  border-right: 1px;
   border-style: solid;
   border-color: #dee1ec;
 }

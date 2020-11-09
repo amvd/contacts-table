@@ -1,19 +1,11 @@
 import {
   Deal,
   NO_DEALS,
-  getCurrencySymbol,
   getDealCount,
   getDealValues
 } from '../deal'
 
 describe('Deal data', function() {
-  describe('#getCurrencySymbol', function() {
-    it('returns the proper currency symbol for a given currency code', function() {
-      expect(getCurrencySymbol('usd')).toBe('$')
-      expect(getCurrencySymbol('CAD')).toBe('CA$')
-    })
-  })
-
   describe('#getDealCount', function() {
     it('counts deals', function() {
       const deals = [
@@ -65,7 +57,7 @@ describe('Deal data', function() {
           }
         ]
 
-        expect(getDealValues(deals)).toBe('$50000')
+        expect(getDealValues(deals)).toBe('$50,000')
 
         deals = [
           {
@@ -82,7 +74,7 @@ describe('Deal data', function() {
           }
         ]
 
-        expect(getDealValues(deals)).toBe('AU$14000')
+        expect(getDealValues(deals)).toBe('A$14,000')
       })
     })
 
@@ -115,7 +107,7 @@ describe('Deal data', function() {
           }
         ]
 
-        expect(getDealValues(deals)).toBe('AU$20000, $130000')
+        expect(getDealValues(deals)).toBe('A$20,000, $130,000')
 
         deals = [
           {
@@ -168,7 +160,7 @@ describe('Deal data', function() {
           }
         ]
 
-        expect(getDealValues(deals)).toBe('AU$12, $21, CA$12')
+        expect(getDealValues(deals)).toBe('A$12, $21, CA$12')
       })
     })
   })
