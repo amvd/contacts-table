@@ -1,3 +1,7 @@
+# Contacts List Utilizing ActiveCampaign API
+
+Retrieves a list of contacts from the [ActiveCampaign API](https://developers.activecampaign.com/reference) and displays them in a table, built with React.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

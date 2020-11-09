@@ -43,7 +43,9 @@ export function processData({
 }
 
 export function mapIdsToData<T extends DataEntry>(ids: string[], data: T[]): T[] {
-  return compact(ids.map(id => data.find(datum => datum.id === id) || null))
+  const dataList = ids.map(id => data.find(datum => datum.id === id) || null)
+
+  return compact(dataList)
 }
 
 function mapIpsToLocation(

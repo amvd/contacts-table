@@ -1,4 +1,4 @@
-import { RawContact, RawData, processData } from "../response"
+import { RawData, processData } from '../response'
 import { Contact } from '../contact'
 
 describe('Response', function() {
